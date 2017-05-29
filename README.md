@@ -40,7 +40,7 @@
 
 ## 投影片導覽 :page_with_curl:
 
-1. [Class-01 基礎建設](https://cdn.rawgit.com/mvpdw06/React-Redux-rocket/eff6fe41/class-01/sides/index.html#/3)
+1. [Class-01 基礎建設](https://cdn.rawgit.com/mvpdw06/React-Redux-rocket/eff6fe41/class-01/sides/index.html#/)
 
 ## 其他的呢？
 
