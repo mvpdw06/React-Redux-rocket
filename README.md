@@ -1,10 +1,10 @@
-# React-Redux Rocket
+# React-Redux :rocket: 火箭 :rocket: 快速教學 :metal:
 
 這是一個 React-Redux 快速教學，讓你快速體驗從無到有建構一個 React Single Page App.
 
 > 手把手從無到有
 
-## 前情提要
+## 前情提要 :speech_balloon:
 
 請注意，此堂課為快速教學，故需要必備一些基本技能如下：
 
@@ -20,7 +20,7 @@
 
 > A：我會教你怎麼把這些東西組裝起來！
 
-## 課程導覽
+## 課程導覽 :books:
 
 1. Class-01 基礎建設
     - npm / yarn
@@ -29,7 +29,7 @@
     - React-hot-loader
     - create-react-app
 
-## Lab 導覽
+## Lab 導覽 :wrench:
 
 1. lab-01 
     > CDN 引用 React, ReactDOM, Babel-browser，並用 React Component 寫出 Hello World.
@@ -38,14 +38,14 @@
 3. lab-03
     > 加上 react-hot-loader 加強開發環境
 
-## 投影片導覽
+## 投影片導覽 :page_with_curl:
 
 1. Class-01 基礎建設
 
 ## 其他的呢？
 
-![image]('./img/TO_BE_CONTINUED.png')
+![image]('https://cdn.rawgit.com/mvpdw06/React-Redux-rocket/f36259d4/img/TO_BE_CONTINUED.png')
 
 ## 其他
 
-此課程用於 Xuenn SBK team 內部訓練！
+此課程用於 Xuenn SBK team 內部訓練！:metal::metal::metal:
