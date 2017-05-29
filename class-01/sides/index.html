@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>React-Redux Rocket Class-01</title>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-markdown>
+					<script type="text/template">
+						# React-Redux rocket
+						## 第一堂課
+						Ryan Hsu
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 從無到有手把手教學
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 目標
+						> Hello World with React Component <!-- .element: class="fragment highlight-red" -->
+
+						不是說寫程式都要從 Hello World 開始嗎？ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 步驟
+						- 引用 react, react-dom <!-- .element: class="fragment" -->
+						- 引用 babel browser <!-- .element: class="fragment" -->
+						- 利用 React Component 寫 Hello World. <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 請看 lab-01
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 但是
+						- 我們不會在 Production 用 client 轉 js 的方式做 
+
+						> 這 performance 100% 不合邏輯啊 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 所以
+						我們要拿出壓箱法寶  <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown data-background="./img/3000wapen.png">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## React 的要你命 3000
+						- Webpack <!-- .element: class="fragment" -->
+						- Babel <!-- .element: class="fragment" -->
+						- React-Hot-Loader <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Webpack
+						- 打包 JavaScript <!-- .element: class="fragment" -->
+						- 做 JavaScript optimized <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Babel
+						- 轉譯 JSX <!-- .element: class="fragment" -->
+						- 轉譯 ES6+ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 請看 lab-02
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 到目前為止
+						### 這樣基本的 React Component 已經有了
+						> 但這樣還不夠 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## React 要你命三千的火藥
+						### 加上 React-hot-loader 加速開發 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## React-hot-loader
+						- File watch 觸發 webpack 重新 bundle <!-- .element: class="fragment" -->
+						- 幫你 reload 畫面 <!-- .element: class="fragment" -->
+
+						> 做 UI 有這功能還不飛上天？ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 請看 lab-03
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 這麼一來 
+						### 基本的 React App 開發基礎已經有了
+					</script>
+				</section>
+
+				<section>
+					<section data-markdown>
+						<script type="text/template">
+							## 但是
+							### 你以為這樣就結束了嗎？
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## 其實有另一個方法可以幫助你做好基礎建設
+						</script>
+					</section>
+					<section data-markdown data-background="./img/eralysay.jpg">
+						<script type="text/template">
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## 因為
+							### 我先講，細節就他媽沒人想聽了！
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## 介紹你好藥
+							### create-react-app <!-- .element: class="fragment" -->
+							> 官方出品，品質保證？ <!-- .element: class="fragment" -->
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## 先講缺點
+							- 官方出的不代表是最好的設定 <!-- .element: class="fragment" -->
+							- 仍然需要依照公司或團隊的狀況做改變 <!-- .element: class="fragment" -->
+							- 打包的東西很多，不見得每個一定都用得到 <!-- .element: class="fragment" -->
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## 優點 
+							- 官方出的，聽起來很厲害 <!-- .element: class="fragment" -->
+							- 官方先幫你踩過一些基本地雷 <!-- .element: class="fragment" -->
+							- 方便實作與練習 <!-- .element: class="fragment" -->
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## 來 demo 吧
+							- #正所謂 zero config <!-- .element: class="fragment" -->
+							- #真正的從無到有 <!-- .element: class="fragment" -->
+							- #我也用不到小抄了 <!-- .element: class="fragment" -->
+						</script>
+					</section>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## 回家作業
+						### 做一個計算機 App <!-- .element: class="fragment highlight-red" -->
+					</script>
+					
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 這樣的 requirement 太廣泛了
+						### 我們來定義一下細節 
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 細節 
+						- 三個輸入按鈕，代表數字 <!-- .element: class="fragment" --> 
+						- 加減按鈕共兩個 <!-- .element: class="fragment" -->
+						- 一個輸出結果的畫面 <!-- .element: class="fragment" -->
+						- 至少要有兩個 Component 組成 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Question & Answer
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						# The End
+						### Thanks everyone!
+						> 記得寫作業 <!-- .element: class="fragment highlight-red" -->
+					</script>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
