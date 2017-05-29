@@ -22,7 +22,7 @@
 
 ## 課程導覽 :books:
 
-1. Class-01 基礎建設
+1. [Class-01 基礎建設](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-01)
     - npm / yarn
     - Webpack
     - Babel
@@ -31,20 +31,20 @@
 
 ## Lab 導覽 :wrench:
 
-1. lab-01 
+1. [lab-01](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-01/lab-01)
     > CDN 引用 React, ReactDOM, Babel-browser，並用 React Component 寫出 Hello World.
-2. lab-02
+2. [lab-02](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-01/lab-02)
     > 利用 npm 引用模組的 libs 並建構 webpack 與 Babel 開發環境
-3. lab-03
+3. [lab-03](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-01/lab-03)
     > 加上 react-hot-loader 加強開發環境
 
 ## 投影片導覽 :page_with_curl:
 
-1. Class-01 基礎建設
+1. [Class-01 基礎建設](https://cdn.rawgit.com/mvpdw06/React-Redux-rocket/eff6fe41/class-01/sides/index.html#/3)
 
 ## 其他的呢？
 
-![image]('https://cdn.rawgit.com/mvpdw06/React-Redux-rocket/f36259d4/img/TO_BE_CONTINUED.png')
+![image](https://cdn.rawgit.com/mvpdw06/React-Redux-rocket/f36259d4/img/TO_BE_CONTINUED.png)
 
 ## 其他
 
