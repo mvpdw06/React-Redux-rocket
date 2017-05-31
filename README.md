@@ -6,7 +6,7 @@
 
 ## 前情提要 :speech_balloon:
 
-請注意，此堂課為快速教學，故需要必備一些基本技能如下：
+:exclamation::exclamation::exclamation: 請注意，此堂課為快速教學，故需要必備一些基本技能如下：
 
 1. JavaScript 基本能力
 2. React 基本概念 (ex: Component 導向)
@@ -16,9 +16,9 @@
 6. Babel 基本概念
 7. Node.js 基本觀念
 
-> Q：WTF，這些必備技能我都有了幹嘛還學？
+> Q：WTF :anguished:，這些必備技能我都有了的話我為什麼還要學？
 
-> A：我會教你怎麼把這些東西組裝起來！
+> A：欸豆 :anguished:，我會教你怎麼把這些東西組裝起來！
 
 ## 課程導覽 :books:
 
