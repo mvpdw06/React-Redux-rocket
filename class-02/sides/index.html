@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>React-Redux Rocket Class-01</title>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-markdown>
+					<script type="text/template">
+						# React-Redux rocket
+						## 第二堂課
+						Ryan Hsu
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 先說我沒有留一手 ...
+						#我把全部都給你 <!-- .element: class="fragment" -->
+
+						#你敢學，我敢教 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 上課前
+						### 我們先來看上次作業的解答 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 請看 Answer <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 今日目標
+						> React 的奧義 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 抱歉
+						今天還是講不到 Redux
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Component 中的 props 與 state
+						> props 不能改，state 才能改！ <!-- .element: class="fragment highlight-red" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 但是
+						### state 不要濫用，否則會很難維護 <!-- .element: class="fragment" -->
+						> stateless 的 app 是比較好的！ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 如何給 props？
+						```
+						<Component data={obj} /> 
+						```
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 如何給 state？ 
+						```
+						this.setState({
+							state1: 1
+							...
+						});
+						```
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						### 經過上一個作業
+						這些對於各位都不是問題
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 但是
+						還是讓我再撈叨的提醒各位一些重點
+						- 給 Component props <!-- .element: class="fragment" -->
+						- 給 Component state <!-- .element: class="fragment" -->
+						- 給 Component 初始 state (createClass 已死) <!-- .element: class="fragment" -->
+						- 利用 props 給 function 觸發上層 Component 事件 <!-- .element: class="fragment" -->
+						- this 很重要，bind 更重要  <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 請看 lab-01
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 相信各位經過 class-01 的 homework 歷練
+						都已經是可以獨當一面的要你命 3000(?
+					</script>
+				</section>
+				<section data-markdown data-background="./img/weapon3000.jpg">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 不知道大家有沒有發現？
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 設計 React App 的心法
+						> 就是像是積木的組合
+						- 每一個 Component 就是一塊積木 <!-- .element: class="fragment" -->
+						- 每個積木的職責單一 <!-- .element: class="fragment" -->
+						- 所有積木堆疊起來就是完整的 App！ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 所以 React 最強的地方是
+						> Reuse 重用 <!-- .element: class="fragment highlight-red" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 舉例
+						我們要 render 一個 list 的列表，我們要怎麼做？
+						> 設計每一筆資料都是一個 Component 包起來 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown data-background="./img/list.png">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 請看 lab-02
+						> map / filter
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Eric 問過一個問題
+						> 在 jQuery 中，常常會要用 element 來藏一些 data，再去爬這些資料來用，那這種情況在 React 要怎麼做？ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown data-background="./img/blackq.jpg">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 解答
+						> React Component 可以接收 props，那你都有 props 可以 render 了，為什麼還需要 render 假的東西呢？ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown data-background="./img/fake.jpg">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 所以
+						React 的思路跟 jQuery 不一樣
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 希望大家可以了解
+						~~jQuery 已死（？~~ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 俗話說
+						凡是能用 JavaScript 實現的東西 <!-- .element: class="fragment" -->
+
+						最後都會用 JavaScript 來實現 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 我們是
+						只要能用 React 或其他 lib 實現的東西 <!-- .element: class="fragment" -->
+
+						絕對不會拿 jQuery 來實現 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 然而
+						當我們在給 Component props 的時候
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						### Component 自己寫的當然知道要傳什麼
+						> 萬一你需要接別人的 Component 呢？ <!-- .element: class="fragment" -->
+						- 問作者？ <!-- .element: class="fragment" -->
+						- 追 code？ <!-- .element: class="fragment" -->
+
+						不管哪一種都要花不少時間不是嗎？ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 換個方式思考
+						有 props 代表有 input，是不是跟 function 很像？
+						```
+						const thisIsAFunction = (input1, input2...) => {
+							// do something...
+						}
+						```
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 所以
+						如果我們可以檢查 input 與提示 input
+
+						是不是對於團隊合作可以更順利？
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 讓我隆重介紹
+						> PropTypes <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## PropType 可以做什麼？
+						- 檢查 props 型別 <!-- .element: class="fragment" -->
+						- 檢查必填（是不是跟 form validation 很像？）<!-- .element: class="fragment" -->
+						- 給預設 props <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 需要注意的地方
+						在 React v15.5 後
+						
+						這個功能被拆出去變成另一個 package 了
+						```
+						$ npm install prop-types
+						```
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 請看 lab-03
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 職責單一
+						Component 負責 render 畫面
+						
+						但通常不是只有 render 畫面這麼簡單... <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						### 也就是說
+						我們常會需要在一些特殊的時間點處理事件
+						
+						> 再換句話說，我們會需要參與 React Component 的<!-- .element: class="fragment" -->**生老病死** 
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## React Component 的生命週期
+						> 一共八個不多也不少 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 生老病死
+						- constructor() <!-- .element: class="fragment" -->
+						- componentWillMount() <!-- .element: class="fragment" -->
+						- componentDidMount() <!-- .element: class="fragment" -->
+						- componentWillReceiveProps(nextProps) <!-- .element: class="fragment" -->
+						- shouldComponentUpdate(nextProps, nextState) <!-- .element: class="fragment" -->
+						- componentWillUpdate(nextProps, nextState) <!-- .element: class="fragment" -->
+						- componentDidupdate() <!-- .element: class="fragment" -->
+						- componentWillUnmount() <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown data-background="./img/lifecycle.png">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 切記
+						shouldComponentUpdate 這個 API
+						
+						沒特殊必要請不要自己改變 return 的結果 <!-- .element: class="fragment" -->
+
+						** ``` return false ``` 會導致畫面不重新 render ** <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 為什麼？
+						官方表示：如果改了，80% 以上只會讓 performance 變得更差，甚至造成 side effect <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 但這件事情
+						在 Redux 有解！ <!-- .element: class="fragment" -->
+						> 與 JavaScript object instance 有關 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 另外
+						- 有種 Component 只負責 render <!-- .element: class="fragment" -->
+						- 不會依照 props 改變 render 的行為 <!-- .element: class="fragment" -->
+						> 例如：icon Component <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 遇到這一類的 Component
+						建議把 shouldComponentUpdate 
+						
+						直接 return false <!-- .element: class="fragment" -->
+						
+						會讓 performance 更好！ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 增進效能進階用法
+						- PureComponent <!-- .element: class="fragment" -->
+						- PureRenderMixin <!-- .element: class="fragment" -->
+						- recompose/pure <!-- .element: class="fragment" -->
+
+						> 都在解決 props 與 state 相同的時候不要重新 render 的問題 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 請看 lab-04
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 回家作業
+						> 利用上次的回家作業，增加歷史紀錄的功能！ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 定義
+						- 延續計算機 app <!-- .element: class="fragment" --> 
+						- 每當有計算結果（ex: 經過加減），就寫一筆紀錄 <!-- .element: class="fragment" -->
+						- 可以刪除紀錄，並 revert 那比的紀錄，反應在結果上 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Question & Answer
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						# The End 
+						### Thanks everyone! 
+						> 記得寫作業 <!-- .element: class="fragment highlight-red" -->
+					</script>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
