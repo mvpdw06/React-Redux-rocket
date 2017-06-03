@@ -18,7 +18,7 @@
 
 > Q：WTF :anguished:，這些必備技能我都有了的話我為什麼還要學？
 
-> A：欸豆 :anguished:，我會教你怎麼把這些東西組裝起來！
+> A：欸豆 :sweat_smile:，我會教你怎麼把這些東西組裝起來！
 
 ## 課程導覽 :books:
 
@@ -28,23 +28,45 @@
     - Babel
     - React-hot-loader
     - create-react-app
+2. [Class-02 React 的奧義](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-02)
+    - props / state
+    - this / bind
+    - React 心法
+    - propTypes
+    - Life cycle
 
 ## Lab 導覽 :wrench:
 
-1. [lab-01](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-01/lab-01)
-    > CDN 引用 React, ReactDOM, Babel-browser，並用 React Component 寫出 Hello World.
-2. [lab-02](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-01/lab-02)
-    > 利用 npm 引用模組的 libs 並建構 webpack 與 Babel 開發環境
-3. [lab-03](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-01/lab-03)
-    > 加上 react-hot-loader 加強開發環境
+1. Class-01
+    1. [lab-01](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-01/lab-01)
+        > CDN 引用 React, ReactDOM, Babel-browser，並用 React Component 寫出 Hello World.
+    2. [lab-02](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-01/lab-02)
+        > 利用 npm 引用模組的 libs 並建構 webpack 與 Babel 開發環境
+    3. [lab-03](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-01/lab-03)
+        > 加上 react-hot-loader 加強開發環境
+2. Class-02
+    1. [lab-01](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-02/lab-01)
+        > Component 傳 props 與設定 state.
+    2. [lab-02](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-02/lab-02)
+        > 重用 React component.
+    3. [lab-03](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-02/lab-03)
+        > propTypes 檢查 props 與預設 props.
+    4. [lab-04](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-02/lab-04)
+        > Component 的生命週期
 
 ## 投影片導覽 :page_with_curl:
 
-1. [Class-01 基礎建設](https://cdn.rawgit.com/mvpdw06/React-Redux-rocket/eff6fe41/class-01/sides/index.html#/)
+1. [Class-01 基礎建設](https://rawgit.com/mvpdw06/React-Redux-rocket/master/class-01/sides/index.html)
+2. [Class-02 React 的奧義](https://rawgit.com/mvpdw06/React-Redux-rocket/master/class-02/sides/index.html)
 
 ## 其他的呢？
 
 ![image](https://cdn.rawgit.com/mvpdw06/React-Redux-rocket/f36259d4/img/TO_BE_CONTINUED.png)
+
+## 教材使用
+
+- Reveal.js 作為 web slides.
+- RawGit 來 serve Github 上的 slides.
 
 ## 其他
 
