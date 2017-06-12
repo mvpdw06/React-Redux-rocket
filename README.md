@@ -34,6 +34,11 @@
     - React 心法
     - propTypes
     - Life cycle
+3. [Redux 從開始到放棄](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-03)
+    - Flux
+    - Redux
+    - redux-devtools-extension
+    - Middleware (redux-thunk)
 
 ## Lab 導覽 :wrench:
 
@@ -53,11 +58,21 @@
         > propTypes 檢查 props 與預設 props.
     4. [lab-04](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-02/lab-04)
         > Component 的生命週期
+3. Class-03
+    1. [lab-01](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-03/lab-01)
+        > Flux 資料流範例
+    2. [lab-02](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-03/lab-02)
+        > Redux 資料流範例
+    3. [lab-03](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-03/lab-03)
+        > Redux + redux-devtools-extension 監聽 action
+    4. [lab-04](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-03/lab-04)
+        > Redux + Middleware 處理非同步事件
 
 ## 投影片導覽 :page_with_curl:
 
 1. [Class-01 基礎建設](https://rawgit.com/mvpdw06/React-Redux-rocket/master/class-01/sides/index.html)
 2. [Class-02 React 的奧義](https://rawgit.com/mvpdw06/React-Redux-rocket/master/class-02/sides/index.html)
+2. [Class-03 Redux 從開始到放棄](https://rawgit.com/mvpdw06/React-Redux-rocket/master/class-03/sides/index.html)
 
 ## 其他的呢？
 

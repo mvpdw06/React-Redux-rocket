@@ -1,0 +1,8 @@
+const ActionType = {
+    INCREMENT: 'INCREMENT',
+    DECREMENT: 'DECREMENT',
+    FETCHDATA: 'FETCHDATA',
+    FETCHDATASUCCESS: 'FETCHDATASUCCESS'
+}
+
+module.exports = ActionType;

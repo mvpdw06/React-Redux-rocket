@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>React-Redux Rocket Class-01</title>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-markdown>
+					<script type="text/template">
+						# React-Redux rocket
+						## 第三堂課
+						Ryan Hsu
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 上課前
+						### 我們先來看上次作業的解答 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 請看 Answer
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 今日目標
+						> Redux 從開始到放棄
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 在講 Redux 前 ...
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 先認識一下作者？
+					</script>
+				</section>
+				<section data-markdown data-background="./img/dan.jpg">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown data-background="./img/secret.jpg">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Redux 啟發於
+						- Flux <!-- .element: class="fragment" -->
+						- Elm architecture <!-- .element: class="fragment" -->
+
+						> 所以請務必先理解 Flux 是什麼鬼東西？ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown data-background="./img/Flux.png">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Flux 中四個重要角色
+						- Action 規範所有改變資料的動作 <!-- .element: class="fragment" -->
+						- Dispatcher 將目前發生的動作告訴已經註冊的 Store <!-- .element: class="fragment" -->
+						- Store 存放資料與邏輯，而且 read only <!-- .element: class="fragment" -->
+						- View 根據資料顯示畫面，並接受使用者操作 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Flux 的好處
+						- 單向資料流設計模式 <!-- .element: class="fragment" -->
+						- 資料與業務邏輯都在 Store，統一管理 <!-- .element: class="fragment" -->
+						- View 只負責排版 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 舉個 🌰
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 在 Flux 架構中
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 邏輯中殺出一個 🐛
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 你會怎麼 trace？
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Trace 步驟
+						- Flux 架構中邏輯都在 Store <!-- .element: class="fragment" -->
+						- Store 會依照 Action 行為改變 <!-- .element: class="fragment" -->
+						- 依照 Action 來追蹤 Store 的要修改的邏輯 <!-- .element: class="fragment" -->
+						- 修改 Store 邏輯 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 修改邏輯會發生什麼事？
+						- 因為 Stroe 更新 <!-- .element: class="fragment" -->
+						- 邏輯更新了，但狀態也重置了 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 為什麼？
+						> 因為 Flux 架構中 Store 負責 <!-- .element: class="fragment" -->
+						- 「存放資料」<!-- .element: class="fragment" -->
+						- 「邏輯」<!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 請看 lab-01
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						### 為了解決這個問題
+						我們必須把 Store 職責拆開 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 這就是 Redux
+					</script>
+				</section>
+				<section data-markdown data-background="./img/Redux.png">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Redux 的四個重要角色
+						- Action <!-- .element: class="fragment" -->
+						- Store <!-- .element: class="fragment" -->
+						- Reducer <!-- .element: class="fragment" -->
+						- View <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 核心角色 Reducer
+						- 啟發於 Elm <!-- .element: class="fragment" -->
+						- 行為加上狀態，就會得到新的狀態 <!-- .element: class="fragment" -->
+						- 也就是 Action + State = new State <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 了解 Redux 角色職責後
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Flux 跟 Redux 的差異是？
+						- Action <!-- .element: class="fragment" -->
+						- Store <!-- .element: class="fragment" -->
+						- 邏輯 <!-- .element: class="fragment" -->
+						- dispatch action 的角色 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Redux 聖經
+						- 單一 Store <!-- .element: class="fragment" -->
+						- 一律透過 Action 改變狀態 <!-- .element: class="fragment" -->
+						- Reducer 實作改變 <!-- .element: class="fragment" -->
+						- Reducer 實作 pure function <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 來吧，開始動手做了！
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 我們需要加上兩個 lib
+						- redux <!-- .element: class="fragment" -->
+						- react-redux <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 請看 lab-02
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Redux 開發利器
+						> redux-devtools-extension <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 好處
+						- 監聽 Action <!-- .element: class="fragment" -->
+						- 查看 Store 中狀態的變化 <!-- .element: class="fragment" -->
+						- 教你寫測試 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 要注意的地方
+						- 不要在 production 版本引用此套件 <!-- .element: class="fragment" -->
+						- mobile 上可能會拖垮速度 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 來 demo 吧！
+						> $ npm install redux-devtools-extension <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 請看 lab-03
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 到目前為止
+						不知道你有沒有發現 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Redux 流程都著重於
+						> 必須要是同步 (Sync) <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 那非同步 (Async) 呢？
+					</script>
+				</section>
+				<section data-markdown data-background="./img/memes.png">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 幫忙處理非同步的角色
+						> Middleware <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 還記得 Redux 的遊戲規則嗎？
+						- 一律透過 Action 改變狀態 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 所以
+						我們要把非同步事件定義在 Action 當中 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 但是
+						還記得 Action 的遊戲規則嗎？ <!-- .element: class="fragment" -->
+						> 必須要 return _？ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 所以
+						我們必須要在非同步的 Action 完成時 <!-- .element: class="fragment" --> 
+						
+						return Action object <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 流程
+						- 觸發非同步 Action <!-- .element: class="fragment" -->
+						- 執行非同步事件 <!-- .element: class="fragment" -->
+						- 非同步完成時發送 success Action <!-- .element: class="fragment" -->
+						- Store 接到 Action 後，dispatch 給 Reducer <!-- .element: class="fragment" -->
+						- Reducer 接到 Action 改變 State <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 講得簡單一點
+						- 觸發非同步 Action <!-- .element: class="fragment" -->
+						- 判斷 Action 是一個 function，先執行 function <!-- .element: class="fragment" -->
+						- 執行完 function 再 dispatch <!-- .element: class="fragment" -->
+						- 若不是 function 就直接 dispatch <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 這就是 Middleware
+					</script>
+				</section>
+				<section data-markdown data-background="./img/redux-life.jpg">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 來看 lab-04 吧
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 回家作業
+						> 利用上次的作業，改成 Redux！ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 定義
+						- 沒有其他定義了，就是改成 Redux <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 另外...
+						如果很快就寫完的人 <!-- .element: class="fragment" -->
+						
+						歡迎也實作 Flux 版本交給我唷！<!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Question & Answer
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						# The End 
+						### Thanks everyone! 
+						> 記得寫作業 <!-- .element: class="fragment highlight-red" -->
+					</script>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
