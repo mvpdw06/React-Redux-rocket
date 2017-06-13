@@ -36,8 +36,33 @@
 				</section>
 				<section data-markdown>
 					<script type="text/template">
+						## 上次作業中常發生的問題
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 這段 code 有什麼問題？
+						```
+						this.setState({
+							history: this.state.history.push(newHistory)
+						});
+						```
+						- Component 中的某個 function 的一部分
+						- newHistory 是 object
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## JavaScript 中
+						- Function 的 return 不等於處理結果 <!-- .element: class="fragment" -->
+						- 這種我們稱之為 nonfunctional API <!-- .element: class="fragment" -->
+						- 請看清楚 API 的說明再寫 Code <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
 						## 今日目標
-						> Redux 從開始到放棄
+						> Redux 從開始到放棄 <!-- .element: class="fragment highlight-red" -->
 					</script>
 				</section>
 				<section data-markdown>
@@ -337,7 +362,9 @@
 				<section data-markdown>
 					<script type="text/template">
 						## 定義
-						- 沒有其他定義了，就是改成 Redux <!-- .element: class="fragment" -->
+						- 利用上次的作業，改成 Redux <!-- .element: class="fragment" -->
+						- 抓取 JSON 檔案拿到預設計算機的資料 <!-- .element: class="fragment" -->
+						- 不能用 jQuery <!-- .element: class="fragment" -->
 					</script>
 				</section>
 				<section data-markdown>
