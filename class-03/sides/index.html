@@ -37,6 +37,7 @@
 				<section data-markdown>
 					<script type="text/template">
 						## 上次作業中常發生的問題
+						### 之一
 					</script>
 				</section>
 				<section data-markdown>
@@ -57,6 +58,32 @@
 						- Function 的 return 不等於處理結果 <!-- .element: class="fragment" -->
 						- 這種我們稱之為 nonfunctional API <!-- .element: class="fragment" -->
 						- 請看清楚 API 的說明再寫 Code <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 上次作業中常發生的問題 
+						### 之二
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 這段 code 有什麼問題？ 
+						``` 
+						const currentHistory = this.state.history;
+
+						currentHistory.push({ newHistory });
+						
+						this.setState({
+							history: newHistory
+						});
+						``` 
+						- Component 中的某個 function 的一部分
+						- newHistory 是 object
+					</script>
+				</section>
+				<section data-markdown data-background="./img/reference.gif">
+					<script>
 					</script>
 				</section>
 				<section data-markdown>
