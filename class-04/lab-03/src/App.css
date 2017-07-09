@@ -1,0 +1,19 @@
+a {
+    margin: 5px;
+}
+
+a, a:visited{
+    color: blue;
+}
+
+a.active {
+    color: red;
+}
+
+.header {
+    border: solid 1px blue;
+}
+
+.content {
+    border: solid 1px red;
+}

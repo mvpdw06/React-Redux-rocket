@@ -39,6 +39,12 @@
     - Redux
     - redux-devtools-extension
     - Middleware (redux-thunk)
+4. [React-Redux 與他們的小夥伴們](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-04)
+    - High-Order Component
+    - Async / Await
+    - Class decorator
+    - react-router
+    - history
 
 ## Lab 導覽 :wrench:
 
@@ -67,12 +73,22 @@
         > Redux + redux-devtools-extension 監聽 action
     4. [lab-04](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-03/lab-04)
         > Redux + Middleware 處理非同步事件
+4. Class-04
+    1. [lab-01](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-04/lab-01)
+        > HOC 範例
+    2. [lab-02](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-04/lab-02)
+        > React-router: Router, Route, parameter, parameter validation 範例
+    3. [lab-03](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-04/lab-03)
+        > React-router: Link, NavLink, Nested Route, Switch, Redirect, Prompt 範例
+    4. [lab-04](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-04/lab-04)
+        > history 範例
 
 ## 投影片導覽 :page_with_curl:
 
 1. [Class-01 基礎建設](https://rawgit.com/mvpdw06/React-Redux-rocket/master/class-01/sides/index.html)
 2. [Class-02 React 的奧義](https://rawgit.com/mvpdw06/React-Redux-rocket/master/class-02/sides/index.html)
-2. [Class-03 Redux 從開始到放棄](https://rawgit.com/mvpdw06/React-Redux-rocket/master/class-03/sides/index.html)
+3. [Class-03 Redux 從開始到放棄](https://rawgit.com/mvpdw06/React-Redux-rocket/master/class-03/sides/index.html)
+4. [Class-04 React-Redux 與他們的小夥伴們](https://rawgit.com/mvpdw06/React-Redux-rocket/master/class-04/sides/index.html)
 
 ## 其他的呢？
 

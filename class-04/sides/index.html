@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>React-Redux Rocket Class-04</title>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-markdown>
+					<script type="text/template">
+						# React-Redux rocket
+						## 第四堂課
+						Ryan Hsu
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 上課前
+						### 我們先來看上次作業的解答 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 請看 Answer
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 是說...
+						Redux 的概念對各位是不是學習曲線高了點？ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 我看大家大概是像這樣
+					</script>
+				</section>
+				<section data-markdown data-background="./img/climb.jpg">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 這樣的話
+						今天不宜繼續延伸 Redux 相關課題 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 所以
+						我們要先往其他的部分走 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 今日目標
+						> React-Redux 與他們的小夥伴們 <!-- .element: class="fragment highlight-red" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 首先
+						讓我們先回到 Component 的部分 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 如果
+						我們想要強化 Component 的功能 <!-- .element: class="fragment" -->
+
+						你會想怎麼做？ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						# 繼承？
+						> Extend？ Mixin？
+					</script>
+				</section>
+				<section data-markdown data-background-video="./img/no.mp4">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 好像有點太誇張了
+						我要說的是，這些都是 OOP 物件導向的概念 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 我們在 JS 的世界
+						就要利用 JS 的特性 <!-- .element: class="fragment" -->
+						> Functional <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## High-Order Component
+						簡稱 HOC
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## HOC 的優點
+						- 熱插拔 (針對 Component 需求可隨時安裝或移除) <!-- .element: class="fragment" -->
+						- 可以寫成 class decorator (94 潮) <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## HOC 的核心概念
+						> 利用 Function / Component return Component <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## react-redux lib 中
+						connect 就是 HOC 的實現 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 來看個範例吧
+						> 如果在 Component 的世界中，在非同步的資料來之前，要呈現一個 loading 畫面給使用者看，你會怎麼做？ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 不使用 HOC
+						1. data 有個屬性是 loading: bool <!-- .element: class="fragment" -->
+						2. 判斷 loading ture 就 render loading <!-- .element: class="fragment" -->
+						3. 非同步資料拿到更新資料，並把 loading 改為 false <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Before
+						```
+						{
+							loading: true,
+							user: null
+						}
+						```
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## After 
+						``` 
+						{ 
+							loading: false, 
+							user: userData 
+						} 
+						```
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 使用 HOC
+						把 loading 這個職責不放在 store 裡面 <!-- .element: class="fragment" -->
+						
+						抽出來到 HOC 裡面做 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 請看 lab-01
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 看完先來賣帖藥
+						Async / Await
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 介紹一下
+						JavaScript ES7 的語法
+						```
+						$ npm install babel-polyfill
+						```
+						> 不裝直接寫會噴 error 給你
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Webpack entry
+						```
+						[
+							'babel-polyfill'
+							...otherEntries
+						]
+						```
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 解決的問題
+						callback(hell) -> Promise(chain) -> Async / Await
+					</script>
+				</section>
+				<section data-markdown data-background="./img/callback.png">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown data-background="./img/promise.png">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown data-background="./img/async.png">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 其實也有很多 lib 幫我們寫好 HOC
+						但有些簡單到不一定要用別人寫的... <!-- .element: class="fragment" -->
+						ex: autobind <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 但有幾個是很好用的 lib
+						- throttle <!-- .element: class="fragment" -->
+						- recompose (激推) <!-- .element: class="fragment" -->
+							- pure <!-- .element: class="fragment" -->
+							- reselect <!-- .element: class="fragment" -->
+							- lifecycle <!-- .element: class="fragment" -->
+							- compose <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 另外
+						如果你想要寫成潮潮的 decorator... <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 再賣帖藥給你
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 套件
+						```
+						$ npm install babel-plugin-transform-decorators-legacy
+						```
+						> 不安裝直接寫 decorator 會噴 error... 
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## .babelrc
+						```
+						{
+							"presets": [
+								"es2015", 
+								"stage-0", 
+								"react"
+							],
+							"plugins": [
+								"react-hot-loader/babel", 
+								"transform-decorators-legacy"
+							]
+						}
+						```
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 這樣就行囉！
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 另一個好夥伴
+						> React-Router <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## react-router
+						定義所有 URL pattern 來處理換頁邏輯 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 當然
+						也包含了上一頁的功能 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 為什麼
+						不用 .NET MVC 內建的 Router 功能？ <!-- .element: class="fragment" -->
+						> 因為我們寫的是 SPA，不會由 server side 來決定我們目前所在的頁面，server side 扮演的角色是提供 API 資料 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 可以做到哪些事
+						- 管理 URL 對應 Component <!-- .element: class="fragment" -->
+						- 客製化 404 頁面 <!-- .element: class="fragment" -->
+						- 客製化 Error 頁面 <!-- .element: class="fragment" -->
+						- 客製化沒有 authentication 頁面 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 先介紹幾個基本的 API
+						- Router Type: BrowserRouter <!-- .element: class="fragment" -->
+						- Route <!-- .element: class="fragment" -->
+						- Link <!-- .element: class="fragment" -->
+						- NavLink <!-- .element: class="fragment" -->
+						- Switch <!-- .element: class="fragment" -->
+						- Redirect <!-- .element: class="fragment" -->
+						- Prompt <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						# 呃
+						先說一下這邊「觀念」有點多，各位抓緊要起飛了 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## v3 → v4 改版
+						有個很重要的概念 <!-- .element: class="fragment" -->
+						> Everything is Component. <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Router - BrowserRouter
+						讓 Router 可以支援 HTML5 的 API <!-- .element: class="fragment" -->
+						
+						- 另有其他 Web 的 Router 像是 HashRouter 與 StaticRouter <!-- .element: class="fragment" -->
+						- Mobile 上的則有 MemoryRouter 或是 NativeRouter <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Route - part.1 
+						- path
+						使用 Regex engine 找尋 match 的 URL pattern
+						（其中包含 slash, dash 與 parameter） <!-- .element: class="fragment" -->
+
+						注意：parameter 是可以被驗證的 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 舉個 🌰
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## path 基本範例：
+						- Home path 有 version 的 parameter <!-- .element: class="fragment" -->
+						```
+						<Route path='/Home' />
+						```
+						> '?' 不可在這邊當作為 parameter 分界 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## path 進階範例一
+						- 讓 version 作為 router 的 parameter <!-- .element: class="fragment" -->
+						- version 並是可選的 <!-- .element: class="fragment" -->
+						```
+						<Route path='/Home/:version?' />
+						``` 
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 進階範例二 
+						- 加入 subver <!-- .element: class="fragment" -->
+						- 用 '-' 作為 version, subver 兩個 parameter 區分 <!-- .element: class="fragment" -->
+						- subver 是可選的 <!-- .element: class="fragment" -->
+						```
+						<Route path='/Home/:version-:subver?' /> 
+						```
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 進階範例三 
+						- 讓 Page 是動態的 <!-- .element: class="fragment" -->
+						- 用 Regex 驗證 parameter (version 是四位數字，subver 是兩位數字) <!-- .element: class="fragment" -->
+						```
+						<Route path='/:Page/:version(\d{4})-:subver(\d{2})' /> 
+						```
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 取得 path 動態資料
+						- match <!-- .element: class="fragment" -->
+							
+							只要被 match 到的 component，就會有 match 這個 props，就可以透過 match.params 取得所有 parameter 資料。反之，match 就會是 null。 <!-- .element: class="fragment" -->
+						- location <!-- .element: class="fragment" -->
+							
+							不管有沒有被 match 到都會有 location 這個 props，呈現目前 router 的位置資料，'?' 後的 search parameter 就不會再 match.params 中找到，但可以在 location.search 找到！ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Route - part.2
+						Match URL prttern 到「指定畫面」上 <!-- .element: class="fragment" -->
+
+						v4 之後有三種 render API，分為： <!-- .element: class="fragment" -->
+						- component  <!-- .element: class="fragment" -->
+							
+							``` component={Component} ``` <!-- .element: class="fragment" -->
+
+						- render  <!-- .element: class="fragment" -->
+						
+							``` render={() => (<h1>Home page</h1>)} ``` <!-- .element: class="fragment" -->
+
+						- children <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 注意
+						- component 若給 inline-function 會有 re-mount 上的問題（因為會被送到 React.createElement） <!-- .element: class="fragment" -->
+						- children 方法比較特別，一定會被 render，需要用 match 這個 props 來決定要不要 render，官方表示「也許」有種情境你會用到：Animate Component <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Route - part.3
+						- exact <!-- .element: class="fragment" -->
+							
+							此 Route 的 path 必須要完全符合，通常用於 index Route(ex: HomePage) <!-- .element: class="fragment" -->
+						- strict <!-- .element: class="fragment" -->
+							
+							讓「path 中最後一個 slash」有 match 的影響力 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 舉例一
+						目前 URL 為：localhost/one/two <!-- .element: class="fragment" -->
+						```
+						<Route path='/one' />
+						```
+
+						exact 是 true / false 結果是？ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 舉例二 
+						```
+						<Route path ='/one/' strict />
+						```
+						- 目前 URL 為：localhost/one <!-- .element: class="fragment" -->
+						- 目前 URL 為：localhost/one/ <!-- .element: class="fragment" -->
+						- 目前 URL 為：localhost/one/two <!-- .element: class="fragment" -->
+						
+						這三個結果是？ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 注意
+						exact 不能被用在巢狀路由當中 <!-- .element: class="fragment" -->
+
+						否則會永遠 match 不到 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 終於要 demo 了...
+						```
+						$ npm install react-router-dom
+						```
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 請看 lab-02
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Link 與 NavLink
+						產生 navigate 到其他頁面的 link <!-- .element: class="fragment" -->
+
+						Link 與 NavLink 差別在於能不能「客製化 active link 的 style 或 class」 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 注意
+						NavLink 原生不能自動 match search parameter 的差異 <!-- .element: class="fragment" -->
+						
+						需要的話要自己寫 isActive 的 API 驗證 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 到這邊問個問題
+						目前 URL：localhost/one <!-- .element: class="fragment" -->
+						```
+						<Route path="/one" component={one} />
+						<Route path="/one:two" component={two} />
+						<Route component={NoMatch} />
+						<Route component={NoAuth} />
+						<Route component={Error} />
+						```
+						會發生什麼事？ <!-- .element: class="fragment" -->
+						> 注意：這個行為 v3 與 v4 不同 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Switch 
+						就是為了解決這個問題而出現的 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Switch
+						```
+						<Switch>
+							<Route path="/one" />
+							<Route path="/one/two" />
+							<Route path="/one/three" />
+						</Switch>
+						```
+						用法很簡單 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Redirect
+						幫你 redirect 到其他頁面，可以分為： <!-- .element: class="fragment" -->
+						- Redirect as a Route(need Switch) <!-- .element: class="fragment" -->
+						- Redirect as a render Component(without Switch) <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Prompt
+						離開頁面 confirm dialog 提示使用者 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 來看 lab-03 吧
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 有種 requirement...
+						很北爛，但聽起來又很合理 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 請實作
+						「回上一頁的按鈕」 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown data-background="./img/dm2-evil-minions.jpg">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 這時候你心裡通常...
+						「WTF ... 瀏覽器上一頁按鈕是多遠」 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 身為一個專業的 ITC
+					</script>
+				</section>
+				<section data-markdown data-background="./img/matureWorker3.png">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						# OK 好！
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 你需要
+						```
+						$ npm install history
+						```
+						實作 history 物件！ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## history API
+						
+						- history.push <!-- .element: class="fragment" -->
+						- history.replace <!-- .element: class="fragment" -->
+						- history.goBack <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 直接來看範例吧
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 請看 lab-04
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 在 router 中
+						其實還有方法可以跟 redux sync store 狀態 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 這算是比較特殊的情況
+						我們今天先不討論 <!-- .element: class="fragment" -->
+						
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 再教下去
+						不只是學生腦子要爆了 <!-- .element: class="fragment" -->
+						
+						我也要爆了 <!-- .element: class="fragment" -->
+						> 算一算到這居然寫了超過 80 頁... <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 但我可以給你 key words
+						- react-router-redux <!-- .element: class="fragment" -->
+						- connected-react-router <!-- .element: class="fragment" -->
+
+						> 真的有興趣的人還是可以找我學... <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## router 的可能性
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 進階一點可以做到 
+						- 類似 Master Page 的模式  <!-- .element: class="fragment" -->
+						- 搭配 i18n lib 做到語系也是一個 parameter in URL <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 回家作業
+						> 利用上次的作業，並用 react-router 與 HOC 強化 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 定義
+						- 用 react-router 實作 landing page <!-- .element: class="fragment" -->
+						- landing page 輸入帳號密碼登入（authentication） <!-- .element: class="fragment" -->
+						- 驗證成功進入 redux 計算機（react-router + HOC）<!-- .element: class="fragment" -->
+						- 驗證失敗進入 error page（react-router + HOC）<!-- .element: class="fragment" -->
+						- 驗證部分請用 HOC 實作 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Question & Answer
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						# The End 
+						### Thanks everyone! 
+						> 記得寫作業 <!-- .element: class="fragment highlight-red" -->
+					</script>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
