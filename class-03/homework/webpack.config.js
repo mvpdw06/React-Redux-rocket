@@ -3,6 +3,7 @@ import webpack from 'webpack';
 
 const webpackConfig = {
     entry: [
+        'babel-polyfill',
         'react-hot-loader/patch',
         path.join(__dirname, 'src/index'),
         'webpack-dev-server/client?http://localhost:9487',
