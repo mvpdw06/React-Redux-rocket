@@ -115,6 +115,7 @@
 						## HOC 的優點
 						- 熱插拔 (針對 Component 需求可隨時安裝或移除) <!-- .element: class="fragment" -->
 						- 可以寫成 class decorator (94 潮) <!-- .element: class="fragment" -->
+						- 重點是「職責分離」 <!-- .element: class="fragment" -->
 					</script>
 				</section>
 				<section data-markdown>
@@ -140,7 +141,7 @@
 						## 不使用 HOC
 						1. data 有個屬性是 loading: bool <!-- .element: class="fragment" -->
 						2. 判斷 loading ture 就 render loading <!-- .element: class="fragment" -->
-						3. 非同步資料拿到更新資料，並把 loading 改為 false <!-- .element: class="fragment" -->
+						3. 非同步資料 get，並把 loading 改為 false <!-- .element: class="fragment" -->
 					</script>
 				</section>
 				<section data-markdown>
@@ -168,9 +169,9 @@
 				<section data-markdown>
 					<script type="text/template">
 						## 使用 HOC
-						把 loading 這個職責不放在 store 裡面 <!-- .element: class="fragment" -->
+						把 loading 這個職責抽離 <!-- .element: class="fragment" -->
 						
-						抽出來到 HOC 裡面做 <!-- .element: class="fragment" -->
+						放到 HOC 裡面做 <!-- .element: class="fragment" -->
 					</script>
 				</section>
 				<section data-markdown>
@@ -232,9 +233,35 @@
 				</section>
 				<section data-markdown>
 					<script type="text/template">
+						## autobind 用法
+						```
+						class App extends Component {
+							@autobind
+							myFunction() {
+								// do something you want here.
+							}
+							render() {
+								<div>Hello World</div>
+							}
+						}
+						```
+					</script>
+				</section>
+				<section data-markdown data-background="./img/blackq.jpg">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						# BJ4
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
 						## 但有幾個是很好用的 lib
 						- throttle <!-- .element: class="fragment" -->
 						- recompose (激推) <!-- .element: class="fragment" -->
+							- withState <!-- .element: class="fragment" -->
 							- pure <!-- .element: class="fragment" -->
 							- reselect <!-- .element: class="fragment" -->
 							- lifecycle <!-- .element: class="fragment" -->
@@ -374,7 +401,7 @@
 						```
 						<Route path='/Home' />
 						```
-						> '?' 不可在這邊當作為 parameter 分界 <!-- .element: class="fragment" -->
+						> '?' 不能在這邊當作為 parameter 分界 <!-- .element: class="fragment" -->
 					</script>
 				</section>
 				<section data-markdown>
@@ -390,7 +417,7 @@
 				<section data-markdown>
 					<script type="text/template">
 						## 進階範例二 
-						- 加入 subver <!-- .element: class="fragment" -->
+						- 加入 subver 的 parameter <!-- .element: class="fragment" -->
 						- 用 '-' 作為 version, subver 兩個 parameter 區分 <!-- .element: class="fragment" -->
 						- subver 是可選的 <!-- .element: class="fragment" -->
 						```
@@ -518,15 +545,13 @@
 				<section data-markdown>
 					<script type="text/template">
 						## 到這邊問個問題
-						目前 URL：localhost/one <!-- .element: class="fragment" -->
+						目前 URL：localhost/one/tow/three/four
 						```
 						<Route path="/one" component={one} />
-						<Route path="/one:two" component={two} />
-						<Route component={NoMatch} />
-						<Route component={NoAuth} />
-						<Route component={Error} />
+						<Route path="/one/two" component={two} />
+						<Route path="/one/tow/three" component={three} />
 						```
-						會發生什麼事？ <!-- .element: class="fragment" -->
+						會發生什麼事？
 						> 注意：這個行為 v3 與 v4 不同 <!-- .element: class="fragment" -->
 					</script>
 				</section>
@@ -543,7 +568,7 @@
 						<Switch>
 							<Route path="/one" />
 							<Route path="/one/two" />
-							<Route path="/one/three" />
+							<Route path="/one/two/three" />
 						</Switch>
 						```
 						用法很簡單 <!-- .element: class="fragment" -->
@@ -551,10 +576,16 @@
 				</section>
 				<section data-markdown>
 					<script type="text/template">
+						## 但不要濫用
+						有些情況不一定要用 Switch 才能解 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
 						## Redirect
 						幫你 redirect 到其他頁面，可以分為： <!-- .element: class="fragment" -->
 						- Redirect as a Route(need Switch) <!-- .element: class="fragment" -->
-						- Redirect as a render Component(without Switch) <!-- .element: class="fragment" -->
+						- Redirect as a Component(without Switch) <!-- .element: class="fragment" -->
 					</script>
 				</section>
 				<section data-markdown>
@@ -689,6 +720,7 @@
 						- 驗證成功進入 redux 計算機（react-router + HOC）<!-- .element: class="fragment" -->
 						- 驗證失敗進入 error page（react-router + HOC）<!-- .element: class="fragment" -->
 						- 驗證部分請用 HOC 實作 <!-- .element: class="fragment" -->
+						- 計算機本身不能有驗證相關邏輯（職責分離） <!-- .element: class="fragment" -->
 					</script>
 				</section>
 				<section data-markdown>
