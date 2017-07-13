@@ -19,12 +19,14 @@ const App = () => (
     <Router>
         <div>
             <Links />
-            <Route path='/' render={() => (<h1>Home</h1>)} />
-            <Route path='/one' render={() => (<h1>One</h1>)} />
-            <Route path='/one:two' render={() => (<h1>Two</h1>)} />
-            <Route render={() => (<h1>No Match</h1>)} />
-            <Route render={() => (<h1>No Auth</h1>)} />
-            <Route render={() => (<h1>Error</h1>)} />
+            <Switch>
+                <Route exact path='/' render={() => (<h1>Home</h1>)} />
+                <Route path='/one' render={() => (<h1>One</h1>)} />
+                <Route path='/one:two' render={() => (<h1>Two</h1>)} />
+                <Route render={() => (<h1>No Match</h1>)} />
+                <Route render={() => (<h1>No Auth</h1>)} />
+                <Route render={() => (<h1>Error</h1>)} />
+            </Switch>
         </div>
     </Router>
 )

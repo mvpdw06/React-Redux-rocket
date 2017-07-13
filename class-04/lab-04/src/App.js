@@ -19,29 +19,29 @@ const Links = () => (
     </nav>
 )
 
-const Home = () => (
+const Home = withRouter(({ history }) => (
     <div>
         <h1>Home</h1>
         <button onClick={() => history.push('./')} >go to home</button>
         <button onClick={history.goBack} >go back</button>
     </div>
-)
+))
 
-const About = () => (
+const About = withRouter(({ history }) => (
     <div>
         <h1>About</h1>
         <button onClick={() => history.push('./')} >go to home</button>
         <button onClick={history.goBack} >go back</button>
     </div>
-)
+))
 
-const Contact = () => (
+const Contact = withRouter(({ history }) => (
     <div>
         <h1>Contact</h1>
         <button onClick={() => history.push('./')} >go to home</button>
         <button onClick={history.goBack} >go back</button>
     </div>
-)
+))
 
 const App = () => (
     <Router history={history}>
