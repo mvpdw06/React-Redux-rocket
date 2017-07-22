@@ -9,6 +9,7 @@ const PORT = 9487;
 const server = new WebpackDevServer(webpack(config), {
     contentBase: path.join(__dirname, 'output'),
     publicPath: config.output.publicPath,
+    historyApiFallback: true,
     hot: true,
     stats: {
         chunks: false,
