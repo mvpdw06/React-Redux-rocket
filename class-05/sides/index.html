@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>React-Redux Rocket Class-05</title>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-markdown>
+					<script type="text/template">
+						# React-Redux rocket
+						## ~~第五堂課~~
+						Ryan Hsu
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 上課前
+						### 我們先來看上次作業的解答 <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## 啊抱歉
+					</script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            ## 我忘了沒有人寫作業
+            ## （我先去旁邊畫圈圈 <!-- .element: class="fragment" -->
+					</script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            ## 好拉
+            ## 我還是 demo 一下成果 <!-- .element: class="fragment" -->
+					</script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            ## 就這樣！？
+            ## Source code 咧？ <!-- .element: class="fragment" -->
+					</script>
+        </section>
+        <section data-markdown data-background="./img/奸笑.png">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+            ## 俗話說的好
+					</script>
+        </section>
+        <section data-markdown data-background="./img/海賊王.jpg">
+					<script type="text/template">
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+            ## 我把東西都放在我腦子了
+					</script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            ## 有寫功課或有想法的自己來找我吧（？
+					</script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            ## 今天課程重新開始
+					</script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            ## 先問大家對於 React 到底有什麼問題想問？
+            ### 你的問題有可能是大家的問題，快問！<!-- .element: class="fragment" -->
+					</script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            ## 有些
+            ## 事 (ㄔㄡˇ) 情 (ㄏㄨㄚˋ) 要在一開始先講好
+					</script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            ## 從這堂課開始
+					</script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            ## 以前完整的 lab demo
+            # 沒有  <!-- .element: class="fragment" -->
+					</script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            ## 從開始到放棄的手把手教學
+            # 沒有 <!-- .element: class="fragment" -->
+					</script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            ## 老師「主動」作業 code review
+            # 沒有 <!-- .element: class="fragment" -->
+					</script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            ## 風趣的幹話教學模式
+            # 有 <!-- .element: class="fragment" -->
+					</script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            ## 正片開始
+					</script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            # React 16
+            ### 讓我們從「簡單」的開始 <!-- .element: class="fragment" -->
+            > 都從 React Fiber 還沒 ready 教到現在已經 16.4 了... <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+            ## 先問大家覺得用 React 最大的好處是什麼？
+					</script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## 複習一下 React 本身的特性
+
+            - React 跟 ReactDOM 的分別是？ <!-- .element: class="fragment" -->
+            - 能讓 Component re-render 的是？ <!-- .element: class="fragment" -->
+            - state 跟 props 的區別是？ <!-- .element: class="fragment" -->
+            - Component 一定要大寫開頭 <!-- .element: class="fragment" -->
+            - Component function bind 的三種方法 <!-- .element: class="fragment" -->
+
+          </script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            ## React 16 新特性
+            - 更小 <!-- .element: class="fragment" -->
+            - 更快 <!-- .element: class="fragment" -->
+					</script>
+        </section>
+        <section data-markdown data-background="./img/金探子.png">
+					<script type="text/template">
+					</script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            ## 金探子 4 ni？
+					</script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            ## 之前吵的沸沸揚揚的授權
+            ## MIT License
+            > 作者只想保留版權, 而沒有其他任何限制
+					</script>
+        </section>
+        <section data-markdown>
+					<script type="text/template">
+            ## Fragment
+            ```
+            import React, { Fragment } from 'react'
+
+            const App = (props) => (
+              <Fragment>
+                <li>AAA</li>
+                <li>BBB</li>
+                <li>CCC</li>
+              </Fragment>
+            )
+
+            export default App
+            ```
+					</script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## 看出來他在解決什麼問題了嗎？
+            ### 我們請親身體驗過的人來講解 <!-- .element: class="fragment" -->
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## 官方表示
+            ## 如果 Babel 7 正式 release 
+            ```
+            import React, { Fragment } from 'react'
+
+            const App = (props) => (
+              <>
+                <li>AAA</li>
+                <li>BBB</li>
+                <li>CCC</li>
+              </>
+            )
+
+            export default App
+            ```
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## 恩，還沒
+            ### 我也還在等
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Error Boundary
+            - 幫你抓 UI 上的 Error，可以自己接 API 送回 Server 寫 log (client-side error 無所遁形)
+            - 實作 Container Pattern 的 Container
+          </script>
+        </section>
+        <section data-markdown>
+            <script type="text/template">
+              ## 恩
+              ### 沒有 demo <!-- .element: class="fragment highlight-red" -->
+            </script>
+          </section>
+				<section data-markdown>
+					<script type="text/template">
+            ## 生命週期改變
+            
+            - componentWillMount
+            - componentWillUpdate
+            - componentWillReceiveProps
+
+            > 這三個掰掰囉
+					</script>
+        </section>
+        <section data-markdown data-background="./img/lifecycle.jpeg">
+					<script type="text/template">
+					</script>
+        </section>
+        
+        <section data-markdown>
+          <script type="text/template">
+            ## 如何解決 re-render 的問題？
+          </script>
+        </section>
+        <section data-markdown data-background="./img/updateIssue.png">
+					<script type="text/template">
+					</script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## 請問這樣會有什麼問題？
+          </script>
+        </section>
+				<section data-markdown>
+					<script type="text/template">
+            # Webpack 4
+            ### 又是這鬼傢伙！？ <!-- .element: class="fragment" -->
+            ### 你說他出到第四版了！？ <!-- .element: class="fragment" -->
+            ### WHAT！？ <!-- .element: class="fragment" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+            ## 沒錯又是這傢伙
+            ### 第四版做了不少改變
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## ~~我的部落格都有寫（誤~~
+					</script>
+				</section>
+				<section data-markdown>
+          <script type="text/template">
+            ## 新特性
+            - 多了 webpack-cli <!-- .element: class="fragment" -->
+            - 大多設定有了預設值 <!-- .element: class="fragment" -->
+            - 對 hotModuleReplacement 優化 <!-- .element: class="fragment" -->
+            - 有 mode 可以使用 (development, production) <!-- .element: class="fragment" -->
+            - entry 預設 ./src <!-- .element: class="fragment" -->
+            - output 預設 ./dist <!-- .element: class="fragment" -->
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## 進階來說可以做到
+            - 不需要 devServer.js，直接以 webpack-cli 取代 <!-- .element: class="fragment" -->
+            - 最簡單的設定只需要 module, resolve, plugins <!-- .element: class="fragment" -->
+            - 自動處理 development, production 模式優化 <!-- .element: class="fragment" -->
+            - 不需要設定 devtool <!-- .element: class="fragment" -->
+            - 但由於沒辦法使用 babel-cli 啟動 webpack，所以 webpack.config.js 只能寫 ES5 <!-- .element: class="fragment" -->
+          </script>
+        </section>
+        
+        <section data-markdown>
+          <script type="text/template">
+            ## 介紹個好用的功能 Alias
+            ```
+            resolve: {
+              alias: {
+                moduleA: path.resolve(__dirname, 'src/components/moduleA/'),
+              },
+            }
+            ```
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## 先看 Code
+            ```
+            import '../../../../moduleA/partOfModule/index'
+            ```
+            ## 你看懂這隻在哪嗎....
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## 所以使用 Alias 就可以改成
+            ```
+            import 'moduleA/partOfModule/index'
+            ```
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## 這樣有什麼好處？
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## 作業 
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## 寫一個 number box
+            - 要有 Async 拿資料行為
+            - 10 秒 refresh 一次
+            - 資料改變要有顏色變化
+          </script>
+        </section>
+        
+        <section data-markdown>
+          <script type="text/template">
+            ## 限制
+            - 不能用 jQuery
+            - React 16.3 (lastest version)
+            - 至少 3 層 Component
+            - 要有 Component 之間互動
+            - webpack 4.x (lastest version)
+
+            更多限制請看：[Frontend Guide](https://paper.dropbox.com/doc/Front-end-Guide-oadarvMbDINGflXo50rPi)
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## 當然如果你作業寫完
+            ## 還是可以找我看
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## 下次的作業
+            ## 還是會 base on 這次的作業
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Question & Answer
+          </script>
+        </section>
+        
+        <section data-markdown>
+          <script type="text/template">
+            # The End
+            ## Thanks everyone!
+          </script>
+        </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

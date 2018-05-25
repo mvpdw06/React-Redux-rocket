@@ -45,6 +45,7 @@
     - Class decorator
     - react-router
     - history
+5. [React 16 新功能與特性複習](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-05)
 
 ## Lab 導覽 :wrench:
 
@@ -82,6 +83,8 @@
         > React-router: Link, NavLink, Nested Route, Switch, Redirect, Prompt 範例
     4. [lab-04](https://github.com/mvpdw06/React-Redux-rocket/tree/master/class-04/lab-04)
         > history 範例
+5. Class-05
+  > 沒有
 
 ## 投影片導覽 :page_with_curl:
 
@@ -89,6 +92,7 @@
 2. [Class-02 React 的奧義](https://rawgit.com/mvpdw06/React-Redux-rocket/master/class-02/sides/index.html)
 3. [Class-03 Redux 從開始到放棄](https://rawgit.com/mvpdw06/React-Redux-rocket/master/class-03/sides/index.html)
 4. [Class-04 React-Redux 與他們的小夥伴們](https://rawgit.com/mvpdw06/React-Redux-rocket/master/class-04/sides/index.html)
+5. [React 16 新功能與特性複習](https://rawgit.com/mvpdw06/React-Redux-rocket/master/class-05/sides/index.html)
 
 ## 其他的呢？
 
